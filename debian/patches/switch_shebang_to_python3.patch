@@ -1,0 +1,22 @@
+From 827c769e5fc98e0f2a34c47cef953cc6328abced Mon Sep 17 00:00:00 2001
+From: Changqing Li <changqing.li@windriver.com>
+Date: Thu, 29 Oct 2020 08:39:18 +0800
+Subject: [PATCH] switch shebang to python3
+
+python2 is EOL, swith shebang to python3
+
+Signed-off-by: Changqing Li <changqing.li@windriver.com>
+---
+ test/gflags_build.py.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/test/gflags_build.py.in b/test/gflags_build.py.in
+index a8cba2b..559163e 100644
+--- a/test/gflags_build.py.in
++++ b/test/gflags_build.py.in
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ 
+ import os
+ import sys

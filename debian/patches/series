@@ -1,0 +1,3 @@
+package.pc.in-exec_prefix.patch
+replace_deprecated_C_headers.patch
+switch_shebang_to_python3.patch

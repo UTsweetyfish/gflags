@@ -1,0 +1,81 @@
+From 6d224d34b6c318bfa266badb657e77acd8f9ada5 Mon Sep 17 00:00:00 2001
+From: Rosen Penev <rosenp@gmail.com>
+Date: Thu, 31 Oct 2019 13:16:34 -0700
+Subject: [PATCH] [clang-tidy] Replace deprecated C headers
+
+Deprecated with C++14.
+
+Found with modernize-deprecated-headers
+
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ src/gflags.cc             | 12 ++++++------
+ src/gflags_completions.cc |  6 +++---
+ src/gflags_reporting.cc   |  8 ++++----
+ 3 files changed, 13 insertions(+), 13 deletions(-)
+
+diff --git a/src/gflags.cc b/src/gflags.cc
+index 8f5aa0b..04d0f9b 100644
+--- a/src/gflags.cc
++++ b/src/gflags.cc
+@@ -90,18 +90,18 @@
+ #include "config.h"
+ #include "gflags/gflags.h"
+ 
+-#include <assert.h>
+-#include <ctype.h>
+-#include <errno.h>
++#include <cassert>
++#include <cctype>
++#include <cerrno>
+ #if defined(HAVE_FNMATCH_H)
+ #  include <fnmatch.h>
+ #elif defined(HAVE_SHLWAPI_H)
+ #  define NO_SHLWAPI_ISOS
+ #  include <shlwapi.h>
+ #endif
+-#include <stdarg.h> // For va_list and related operations
+-#include <stdio.h>
+-#include <string.h>
++#include <cstdarg> // For va_list and related operations
++#include <cstdio>
++#include <cstring>
+ 
+ #include <algorithm>
+ #include <map>
+diff --git a/src/gflags_completions.cc b/src/gflags_completions.cc
+index c53a128..c0ba325 100644
+--- a/src/gflags_completions.cc
++++ b/src/gflags_completions.cc
+@@ -46,9 +46,9 @@
+ //     5a) Force bash to place most-relevent groups at the top of the list
+ //     5b) Trim most flag's descriptions to fit on a single terminal line
+ 
+-#include <stdio.h>
+-#include <stdlib.h>
+-#include <string.h>   // for strlen
++#include <cstdio>
++#include <cstdlib>
++#include <cstring>   // for strlen
+ 
+ #include <set>
+ #include <string>
+diff --git a/src/gflags_reporting.cc b/src/gflags_reporting.cc
+index 29be922..6664d64 100644
+--- a/src/gflags_reporting.cc
++++ b/src/gflags_reporting.cc
+@@ -48,10 +48,10 @@
+ // called after all flag-values have been assigned, that is, after
+ // parsing the command-line.
+ 
+-#include <stdio.h>
+-#include <string.h>
+-#include <ctype.h>
+-#include <assert.h>
++#include <cstdio>
++#include <cstring>
++#include <cctype>
++#include <cassert>
+ #include <string>
+ #include <vector>
+ 

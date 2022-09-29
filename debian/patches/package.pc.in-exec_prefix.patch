@@ -1,0 +1,26 @@
+From 2cac878761b29776f0e95a191a03c08a2ac0f014 Mon Sep 17 00:00:00 2001
+From: Rosen Penev <rosenp@gmail.com>
+Date: Mon, 16 Sep 2019 11:20:00 -0700
+Subject: [PATCH] package.pc.in: bin and libdir to exec_prefix
+
+More consistent with other pkgconfig files.
+
+No functional difference.
+---
+ cmake/package.pc.in | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/cmake/package.pc.in b/cmake/package.pc.in
+index 80df818..b813a48 100644
+--- a/cmake/package.pc.in
++++ b/cmake/package.pc.in
+@@ -1,7 +1,7 @@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=${prefix}
+-bindir=${prefix}/@RUNTIME_INSTALL_DIR@
+-libdir=${prefix}/@LIBRARY_INSTALL_DIR@
++bindir=${exec_prefix}/@RUNTIME_INSTALL_DIR@
++libdir=${exec_prefix}/@LIBRARY_INSTALL_DIR@
+ includedir=${prefix}/@INCLUDE_INSTALL_DIR@
+ 
+ Name: @PACKAGE_NAME@
